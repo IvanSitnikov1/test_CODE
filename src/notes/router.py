@@ -34,7 +34,7 @@ async def create_note(
         session: AsyncSession = Depends(get_async_session),
         user: User = Depends(current_user),
 ):
-    """"Эндпоинт для добавления заметки"""
+    """Эндпоинт для добавления заметки"""
 
     validated_content = await validation_text(content)
     stmt = insert(note).values(content=validated_content, author_id=user.id)

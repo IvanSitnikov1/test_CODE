@@ -4,6 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from database import Base, metadata
 
+
 user = Table(
     "user",
     metadata,

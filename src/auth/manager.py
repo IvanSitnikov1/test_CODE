@@ -6,6 +6,7 @@ from fastapi_users import BaseUserManager, IntegerIDMixin
 from .models import User
 from .utils import get_user_db
 
+
 SECRET = "SECRET"
 
 
