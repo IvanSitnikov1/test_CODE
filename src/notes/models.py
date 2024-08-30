@@ -1,7 +1,7 @@
 from sqlalchemy import MetaData, Table, Column, Integer, Text, ForeignKey
 
 from auth.models import user
-from src.database import metadata
+from database import metadata
 
 
 note = Table(
