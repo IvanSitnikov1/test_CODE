@@ -8,6 +8,11 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d postgres" ]
+      interval: 1s
+      timeout: 5s
+      retries: 5
 
   app:
     build:
@@ -22,4 +27,5 @@ services:
     ports:
       - 9999:8000
     depends_on:
-      - db
+      db:
+        condition: service_healthy
